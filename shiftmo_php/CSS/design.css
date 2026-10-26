@@ -1,0 +1,394 @@
+/* 全ページ共通の見た目です。機能の処理は変更しません。 */
+/* 色や余白を変えたいときは、このファイルを編集してください。 */
+
+/* 1. 背景と文字 */
+body {
+    background: #edf2f7;
+    color: #26364b;
+    font-family: "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+}
+a { color: #2864c5; }
+
+/* 2. 上のヘッダー */
+.topbar {
+    height: 76px;
+    background: #ffffff;
+    color: #52627a;
+    border-bottom: 1px solid #e3e9f2;
+    padding: 0 30px;
+    gap: 20px;
+}
+.topbar .logo {
+    color: #2864c5;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+.topbar a { color: #52627a; }
+.topbar > a:last-child {
+    border: 1px solid #dce4ef;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 16px;
+    text-decoration: none;
+}
+.user-name { font-size: 17px; font-weight: normal; }
+
+/* 3. 左のメニュー。選択中のページは青く表示します。 */
+.sidebar {
+    top: 76px;
+    width: 250px;
+    background: #1d304e;
+    border-right: 1px solid #1d304e;
+    padding: 24px 16px;
+}
+.sidebar a {
+    color: #dce6f5;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 11px 16px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 17px;
+    text-decoration: none;
+}
+.sidebar a:hover { background: #2b4365; color: #ffffff; }
+.sidebar a.active,
+.sidebar a[aria-current="page"] {
+    background: #326bce;
+    border-color: #326bce;
+    color: #ffffff;
+    font-weight: bold;
+    border-left: 3px solid #9bc6ff;
+}
+
+/* 4. 本文を白いカードにまとめます。 */
+.main-content { margin: 76px 0 0 250px; padding: 36px; min-width: 0; }
+.panel {
+    max-width: 1200px;
+    padding: 32px;
+    border: 1px solid #e4eaf3;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px #23395b0d;
+    overflow-x: auto;
+}
+h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #26364b;
+    border-bottom: 2px solid #e7edf5;
+    border-left: 5px solid #326bce;
+    padding-left: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 26px;
+}
+h2 { font-size: 21px; margin-top: 32px; color: #31435f; }
+h3 { font-size: 19px; margin-top: 30px; }
+.welcome { font-size: 19px; color: #5b6a80; }
+.design-heading {
+    background: #eef4ff;
+    color: #2864c5;
+    border-radius: 8px;
+    text-align: left;
+    padding: 14px 20px;
+}
+
+/* 5. 入力欄。選択している欄に青い枠を付けます。 */
+label { font-size: 17px; margin: 18px 0 8px; color: #52627a; }
+input, select, textarea {
+    background: #ffffff;
+    border: 1px solid #d8e1ee;
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #26364b;
+    font-size: 18px;
+    max-width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #b9d0fc;
+    outline-offset: 1px;
+    border-color: #326bce;
+}
+input[readonly] { background: #f5f7fb; color: #63738b; }
+textarea { min-height: 150px; resize: vertical; }
+input[type="radio"], input[type="checkbox"] { width: auto; accent-color: #326bce; }
+
+/* 6. 登録ボタンと戻るボタン */
+button {
+    background: #326bce;
+    color: #ffffff;
+    border: 1px solid #326bce;
+    border-radius: 8px;
+    padding: 11px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 48px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+button:hover { background: #2458b2; border-color: #2458b2; }
+button:disabled { background: #e2e7ef; border-color: #e2e7ef; color: #758398; cursor: default; }
+button:focus-visible, a:focus-visible { outline: 3px solid #91b5f7; outline-offset: 3px; }
+.design-button, .adjust-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    line-height: 1.5;
+    gap: 8px;
+    background: #ffffff;
+    color: #3c5577;
+    border: 1px solid #d8e1ee;
+    border-radius: 8px;
+    padding: 10px 18px;
+    text-decoration: none;
+}
+.design-button:hover, .adjust-button:hover { background: #eff4fd; border-color: #b8cdef; }
+.design-actions { display: flex; align-items: center; gap: 14px; margin-top: 28px; border-top: 1px solid #e7edf5; padding-top: 22px; flex-wrap: wrap; }
+.cancel-button, button.secondary { background: #ffffff; color: #65758c; border-color: #d8e1ee; }
+.cancel-button:hover, button.secondary:hover { background: #f1f5fb; }
+
+/* 7. 一覧表。横の線を使って見やすくします。 */
+table { border-collapse: separate; border-spacing: 0; margin: 20px 0; }
+th, td, .design-table th, .design-table td, .adjust-table th, .adjust-table td {
+    border: 0;
+    border-bottom: 1px solid #e7edf5;
+    padding: 15px 16px;
+    font-size: 17px;
+}
+th, .design-table th, .adjust-table th { background: #f1f5fb; color: #52627a; font-weight: bold; }
+tr:first-child th:first-child { border-top-left-radius: 8px; }
+tr:first-child th:last-child { border-top-right-radius: 8px; }
+tr:hover td { background: #f9fbfe; }
+td button { padding: 7px 14px; font-size: 16px; }
+.table-scroll, .calendar-scroll, .adjust-table-scroll { max-width: 100%; }
+
+/* 8. シフト管理のメニューと子ページ */
+.menu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 28px 0; }
+.menu-grid .design-button {
+    padding: 30px 24px; min-height: 120px; justify-content: flex-start;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #dfe8f5;
+    border-top: 4px solid #326bce;
+    background: #f8faff;
+}
+.menu-grid .design-button:hover { background: #edf3ff; border-color: #9cb9eb; }
+.breadcrumbs { color: #738299; margin-bottom: 18px; font-size: 16px; }
+.subpage-nav, .view-tabs { gap: 8px; }
+.subpage-nav a, .view-tabs a { border-color: #dce5f2; border-radius: 8px; font-size: 17px; }
+.subpage-nav a[aria-current="page"], .view-tabs a.active { background: #326bce; color: #ffffff; border-color: #326bce; }
+
+/* 9. ホームの時計、お知らせ、結果の表示 */
+.home-clock {
+    padding: 28px;
+    background: #edf3ff;
+    border: 1px solid #dfe9fc;
+    border-left: 4px solid #326bce;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+.home-clock span { color: #526b94; font-size: 17px; }
+.home-clock .current-time { font-size: 30px; color: #28549b; letter-spacing: 1px; }
+.notice { background: #f8faff; border: 1px solid #e6edf7; border-radius: 10px; padding: 20px; margin: 14px 0; }
+.notice h3 { margin: 6px 0; }
+.empty-notice { border: 1px dashed #d8e1ee; border-radius: 10px; padding: 34px 20px; text-align: center; color: #738299; }
+.success { background: #edf8f3; color: #287756; border-left: 3px solid #59a985; padding: 14px 18px; border-radius: 8px; }
+.error { background: #fff2f2; color: #b54444; padding: 14px 18px; border-radius: 8px; }
+.hint, .muted { color: #738299; font-size: 16px; }
+
+/* 10. 勤怠の選択ボタンとカレンダー */
+.attendance-buttons { gap: 14px; }
+.attendance-choice { background: #f8faff; color: #326bce; border: 1px solid #cbdcf7; border-radius: 10px; min-width: 130px; min-height: 60px; }
+.attendance-choice:hover { background: #eaf1ff; border-color: #91b5f7; }
+.attendance-choice[aria-pressed="true"] { background: #326bce; color: #ffffff; border-color: #326bce; box-shadow: 0 0 0 3px #e1ebfc; }
+.calendar { border-color: #e3e9f2; border-radius: 10px; }
+.weekday { background: #f1f5fb; border-color: #e3e9f2; }
+.calendar-day { border-color: #e3e9f2; }
+.shift-item { background: #edf8f3; border-left-color: #66ad8e; color: #316c56; }
+.week-day { background: #fafcff; border-color: #e3e9f2; }
+.week-day strong { background: #edf3ff; color: #3b609a; }
+.timeline-bar { background: #d5ebdf; color: #316c56; }
+
+/* 11. ログインとパスワード再設定 */
+.login-page { background: #edf3fc; padding: 24px; }
+.login-card { width: 460px; max-width: 100%; border: 1px solid #e0e8f4; border-top: 4px solid #326bce; border-radius: 16px; padding: 38px; box-shadow: 0 16px 50px #254b8610; }
+.login-card h1 { color: #2864c5; }
+.login-card input { width: 100%; }
+.login-card button { min-height: 46px; }
+
+/* 12. 幅が800px以下の画面。メニューを横に並べます。 */
+@media (max-width: 800px) {
+    .topbar { height: 64px; padding: 0 16px; gap: 12px; }
+    .topbar .logo { font-size: 24px; }
+    .topbar > span, .user-name { font-size: 15px; }
+    .user-clock { padding: 0; }
+    .topbar > a:last-child { font-size: 15px; padding: 5px 9px; }
+    .layout { padding-top: 64px; }
+    .sidebar { position: static; width: auto; display: flex; flex-wrap: nowrap; overflow-x: auto; padding: 12px; border-bottom: 1px solid #e3e9f2; }
+    .sidebar a { flex: 0 0 auto; margin: 0; padding: 8px 12px; white-space: nowrap; }
+    .main-content { margin: 0; padding: 18px 12px; }
+    .panel { padding: 22px 18px; border-radius: 12px; }
+    h1 { font-size: 24px; }
+    .home-clock { padding: 20px; }
+    .home-clock .current-time { font-size: 25px; }
+    .menu-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .menu-grid .design-button { padding: 22px; }
+    .attendance-buttons { display: grid; grid-template-columns: 1fr 1fr; }
+    .attendance-choice { min-width: 0; padding: 12px; }
+    .design-row label { min-width: 0; width: 100%; }
+    .login-card { padding: 28px 22px; }
+}
+
+/* 13. 文字を大きくし、ボタンやリンクも読みやすくします。 */
+.design-button, .adjust-button { font-size: 18px; }
+.shift-item, .timeline-bar, .time-scale { font-size: 16px; }
+.empty-notice { font-size: 18px; }
+@media (max-width: 800px) {
+    .topbar { gap: 8px; padding: 0 10px; }
+    .topbar .logo { letter-spacing: 0; font-size: 22px; }
+    .topbar > span, .user-name { font-size: 15px; }
+    .topbar > a:last-child { font-size: 15px; padding: 5px 7px; }
+    .user-name { max-width: 140px; overflow-wrap: anywhere; line-height: 1.4; }
+    .sidebar a { font-size: 17px; }
+}
+
+/* 14. 全画面で同じ余白とボタンの並び方を使います。 */
+.topbar { box-shadow: 0 2px 12px #1d304e08; }
+.topbar .logo { font-weight: bold; }
+.topbar .current-time { color: #52627a; font-size: 16px; }
+.panel { background: #ffffff; }
+.panel > form { margin-bottom: 24px; }
+.panel form > button { margin-top: 18px; }
+.design-actions button, .employee-row-actions button { margin-top: 0; }
+.button-row { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
+.design-row { gap: 16px; margin-bottom: 24px; }
+.design-row input, .design-row select { min-height: 48px; }
+input, select, textarea { font-family: inherit; }
+label input, label select, label textarea { margin-top: 8px; }
+th { white-space: nowrap; }
+td { vertical-align: middle; }
+tr:nth-child(odd) td { background: #fafcff; }
+tr:hover td { background: #f0f5ff; }
+td .design-button, td button { min-height: 42px; }
+.inline { margin: 4px 0 4px 8px; vertical-align: middle; }
+.table-scroll, .adjust-table-scroll { overflow-x: auto; }
+.panel .table-scroll table, .adjust-table { min-width: 620px; }
+.view-tabs, .subpage-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.view-tabs a, .subpage-nav a { display: inline-flex; align-items: center; min-height: 46px; padding: 9px 20px; text-decoration: none; }
+.month-control { gap: 16px; margin: 24px 0; }
+.month-control a { display: inline-block; padding: 8px 16px; border: 1px solid #d8e1ee; border-radius: 8px; text-decoration: none; background: white; }
+.calendar { overflow: hidden; }
+.calendar .weekday { padding: 14px 8px; color: #52627a; font-weight: bold; }
+.calendar .sunday { color: #b54444; }
+.calendar .saturday { color: #326bce; }
+.login-page { background: #1d304e; }
+.login-card { border-top-width: 6px; box-shadow: 0 20px 60px #0d1d3640; }
+.login-card h1 { border-left: 0; padding-left: 0; }
+
+/* 15. 小さい画面でも、同じ色と読みやすい大きさにします。 */
+@media (max-width: 800px) {
+    .sidebar { background: #1d304e; border-bottom: 0; }
+    .sidebar a { color: #dce6f5; }
+    .main-content { margin: 0; padding: 18px 12px; }
+    .panel { padding: 22px 18px; }
+    .topbar { height: 64px; }
+    .layout { padding-top: 64px; }
+    .topbar .current-time { font-size: 13px; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .design-actions { gap: 12px; }
+}
+
+/* 16. 各画面の大きさをそろえます。ここを直すと全画面に反映されます。 */
+body { line-height: 1.6; letter-spacing: 0; }
+button, input, select, textarea { font-family: inherit; letter-spacing: 0; }
+.main-content { padding: 28px; }
+.panel { width: 100%; padding: 28px; }
+h1 { margin: 0 0 24px; padding-bottom: 16px; line-height: 1.4; letter-spacing: 0; }
+h2 { margin: 28px 0 16px; line-height: 1.5; }
+h3 { margin: 24px 0 12px; line-height: 1.5; }
+label { line-height: 1.6; }
+input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), select {
+    width: 100%; max-width: 430px; min-width: 0; height: 48px;
+    padding: 10px 12px; font-size: 18px; line-height: 1.5;
+}
+textarea { width: 100%; max-width: 430px; font-size: 18px; line-height: 1.6; }
+.panel form > input:not([type="hidden"]), .panel form > select { max-width: 430px; min-height: 48px; }
+.panel button, .panel .design-button, .panel .adjust-button {
+    display: inline-flex; align-items: center; justify-content: center;
+    box-sizing: border-box; min-height: 48px; margin: 0;
+    padding: 10px 18px; border-width: 1px; border-style: solid;
+    font-family: inherit; font-size: 18px; font-weight: bold; line-height: 1.5;
+    text-align: center; white-space: nowrap;
+}
+/* 三つの管理画面で、同じ幅と高さの入口を使います。 */
+.menu-grid, .employee-menu {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 280px));
+    gap: 16px; margin: 24px 0; align-items: stretch;
+}
+.panel .menu-grid .design-button, .panel .employee-menu .design-button {
+    width: 100%; min-height: 76px; padding: 16px 20px;
+    justify-content: flex-start; text-align: left; white-space: normal;
+    border: 1px solid #d8e4f8; border-left: 4px solid #326bce;
+    border-radius: 8px; background: #f3f7ff; color: #28549b;
+    font-size: 18px; line-height: 1.5;
+}
+.panel .menu-grid .design-button:hover, .panel .employee-menu .design-button:hover {
+    background: #eaf1ff; border-color: #8aace6;
+}
+.design-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; margin-bottom: 20px; }
+.design-row > label { flex: 1 1 220px; max-width: 430px; min-width: 0; margin: 0; }
+.panel .design-actions { justify-content: flex-start; gap: 12px; margin-top: 24px; padding-top: 20px; }
+.panel .design-actions .design-button, .panel .design-actions button { min-width: 110px; }
+.panel form > button { margin-top: 16px; }
+.panel .design-actions button { margin-top: 0; }
+/* 行の余白と操作ボタンを全画面でそろえます。 */
+table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.panel th, .panel td, .design-table th, .design-table td, .adjust-table th, .adjust-table td {
+    padding: 14px 16px; font-size: 17px; line-height: 1.6;
+    vertical-align: middle; text-align: left;
+}
+.panel td { overflow-wrap: anywhere; }
+.panel td .design-button, .panel td button, .panel td .adjust-button {
+    min-height: 44px; padding: 8px 16px; font-size: 17px; line-height: 1.5;
+}
+.employee-row-actions, .adjust-buttons { display: flex; align-items: center; flex-wrap: nowrap; gap: 10px; }
+.employee-row-actions form, .panel .adjust-form { display: flex; align-items: center; margin: 0; }
+.panel .employee-row-actions .design-button, .panel .employee-row-actions button {
+    width: 76px; height: 44px; min-height: 44px; padding: 8px 12px;
+    margin: 0; border: 1px solid #d8e1ee; font-size: 17px; line-height: 1.5;
+}
+.panel .employee-row-actions .cancel-button { border-color: #efcccc; }
+.employee-search { padding: 18px; margin-bottom: 24px; }
+.employee-search-row { align-items: center; gap: 12px; }
+.employee-search-row input { flex: 1 1 220px; max-width: 430px; }
+.panel .employee-search-row button, .panel .employee-search-row .design-button { height: 48px; min-height: 48px; }
+.table-scroll, .calendar-scroll, .adjust-table-scroll { width: 100%; overflow-x: auto; }
+/* 横長の表は表の中だけをスクロールできるようにします。 */
+.table-scroll > table { margin-top: 0; }
+@media (max-width: 1000px) and (min-width: 801px) {
+    .main-content { padding: 20px; }
+    .panel { padding: 22px; }
+}
+@media (max-width: 800px) {
+    .main-content { padding: 18px 12px; }
+    .panel { padding: 22px 18px; }
+    .sidebar { gap: 6px; }
+    .menu-grid, .employee-menu { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
+@media (max-width: 600px) {
+    .menu-grid, .employee-menu { grid-template-columns: minmax(0, 1fr); }
+    .panel .menu-grid .design-button, .panel .employee-menu .design-button { min-height: 68px; padding: 14px 18px; }
+    .design-row > label { flex-basis: 100%; max-width: none; }
+    .employee-search-row input { flex-basis: 100%; max-width: none; }
+    .employee-search-row button, .panel .employee-search-row .design-button { flex: 1 1 auto; }
+    .topbar .logo { flex-shrink: 0; font-size: 20px; }
+    .topbar > span { min-width: 0; overflow-wrap: anywhere; line-height: 1.3; }
+    .topbar > a:last-child { flex-shrink: 0; }
+    .panel .employee-details { min-width: 0; }
+}
+
+.panel td { word-break: normal; }
+.panel .inline button { min-height: 44px; padding: 8px 16px; font-size: 17px; }

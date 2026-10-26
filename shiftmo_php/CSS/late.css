@@ -1,0 +1,202 @@
+/* このファイルは、この画面だけのデザインです。 */
+/* PHPは画面の内容、CSSは色や大きさを決めます。 */
+
+/* 1. 画面全体 */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #f3f6fa;
+    color: #243547;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+}
+a {
+    color: #147bb2;
+}
+
+/* 2. 上の固定ナビゲーション */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    z-index: 10;
+    background-color: #199bda;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 0 24px;
+}
+.topbar .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+    margin-right: auto;
+}
+.topbar a {
+    color: white;
+}
+
+/* 3. 左側の固定メニュー */
+.sidebar {
+    position: fixed;
+    top: 68px;
+    bottom: 0;
+    left: 0;
+    width: 245px;
+    overflow-y: auto;
+    background-color: white;
+    border-right: 1px solid #d5e0e8;
+    padding: 18px;
+}
+.sidebar a {
+    display: block;
+    padding: 12px;
+    border: 1px solid #dce5ec;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 9px;
+}
+.sidebar a:hover {
+    background-color: #e8f6fd;
+}
+
+/* 4. ページの本文 */
+.main-content {
+    margin: 68px 0 0 245px;
+    padding: 28px;
+}
+.panel {
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #d8e1e8;
+    border-radius: 12px;
+    padding: 26px;
+}
+h1 {
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #e4edf4;
+    padding-bottom: 16px;
+}
+h2 {
+    font-size: 19px;
+    margin-top: 28px;
+}
+
+/* 5. 入力フォームとボタン */
+label {
+    display: block;
+    margin: 16px 0 6px;
+    font-weight: bold;
+}
+input, select, textarea {
+    display: block;
+    width: min(100%, 430px);
+    padding: 10px;
+    border: 1px solid #b9c9d6;
+    border-radius: 6px;
+    font: inherit;
+}
+textarea {
+    min-height: 110px;
+}
+button {
+    background-color: #199bda;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 20px;
+    font: inherit;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #087bad;
+}
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* 6. 一覧表 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+}
+th, td {
+    border: 1px solid #d4dfe7;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #edf4f8;
+}
+.table-scroll {
+    overflow-x: auto;
+}
+
+/* 7. メッセージなど */
+.notice {
+    border-bottom: 1px solid #e0e8ef;
+    padding: 15px 4px;
+}
+.muted {
+    color: #697b89;
+    font-size: 13px;
+}
+.success {
+    background-color: #e8f8ed;
+    padding: 12px;
+    border-radius: 7px;
+}
+.error {
+    color: #a32323;
+}
+.inline {
+    display: inline-block;
+}
+.inline button {
+    padding: 6px 10px;
+}
+.hint {
+    font-size: 12px;
+    color: #68798a;
+}
+
+/* 8. 画面が狭い場合 */
+@media (max-width: 800px) {
+    .sidebar {
+        position: static;
+        width: auto;
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    .sidebar a {
+        flex: 1 1 140px;
+        margin: 0;
+    }
+    .main-content {
+        margin: 0;
+        padding: 12px;
+    }
+    .layout {
+        padding-top: 68px;
+    }
+    .panel {
+        padding: 16px;
+    }
+}
+
+/* 9. late.php 専用のデザイン */
+
+/* 遅刻・欠勤連絡の入力欄 */
+.panel textarea { min-height: 140px; }
